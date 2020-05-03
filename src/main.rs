@@ -1,8 +1,10 @@
 #![allow(unused_variables)]
 #![allow(unused_imports)]
 
+
 use std::net::{Shutdown, TcpStream};
 use std::ops::Range;
+use std::thread;
 
 fn scan(host: String, port: u32) {
     let host_port = format!("{}:{}", host, port);
