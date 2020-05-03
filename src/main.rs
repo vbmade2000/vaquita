@@ -1,22 +1,8 @@
-#![allow(unused_variables)]
-#![allow(unused_imports)]
+mod scanner;
 
-
-use std::net::{Shutdown, TcpStream};
+use scanner::scanner::scan;
 use std::ops::Range;
 use std::thread;
-
-fn scan(host: String, port: u32) {
-    let host_port = format!("{}:{}", host, port);
-    let stream = TcpStream::connect(host_port);
-    match stream {
-        Ok(stream) => {
-            println!("{:?}", port);
-            stream.shutdown(Shutdown::Both).expect("");
-        }
-        Err(stream) => {}
-    }
-}
 
 fn main() {
     let from = 1;
